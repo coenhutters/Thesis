@@ -1,0 +1,128 @@
+
+
+
+\begin{figure}[]
+
+\begin{minipage}{.25\textwidth}  % ECONOMIC
+ \centering
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.7}]
+   
+    axis/.style={very thick, ->, >=stealth'},
+    important line/.style={thick},
+    dashed line/.style={dashed, thin},
+    pile/.style={thick, ->, >=stealth'},
+    every node/.style={color=black}
+    ]
+    \coordinate(e) at (1.5,4);
+    \coordinate(p) at (0,1);
+    \coordinate(q) at (3,1);
+    \coordinate(f) at (1.5,0);
+    
+     {\small
+    \draw [align=center] (e) node[above] {Want $(W)$, $\frac{\$}{\#\text{yr}}$ };
+    \draw[align=center] (f) node[below] {Quantity $(Q)$, $\frac{\#}{\text{yr}}$ };
+    \draw[align=center] (q) node [right] {Amount $(q)$, $\#$};
+   \draw[align=center] (p) node [left] {Price $(p)$, $\frac{\$}{\#}$}; 
+    
+    \draw [->, >=stealth'](e)-- (p);
+    \draw [->, >=stealth'](p)-- (f);
+    \draw [->, >=stealth'](f)-- (q);
+    \draw [->, >=stealth'](q)-- (e);
+    \draw [->, >=stealth'](e)-- (f);
+    \draw [->, >=stealth'](f)-- (e);
+    
+    \draw ($(p)!0.5!(f)$) node[below left] {$\varepsilon$};  
+    \draw ($(q)!0.5!(f)$) node[below right] {{\small$\int\_ dt$}};
+    \draw ($(q)!0.5!(e)$) node[above right] {$c$};
+    \draw ($(e)!0.5!(f)$) node[below left] {$\delta$};
+    \draw ($(p)!0.5!(e)$) node[left] {{\small$\int\_ dt$}};
+     
+    
+    }
+        \end{tikzpicture}
+
+ \end{minipage}
+ \hfill
+\begin{minipage}{.3\textwidth}    % MECHANICAL
+ \centering
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.7}]
+   
+    axis/.style={very thick, ->, >=stealth'},
+    important line/.style={thick},
+    dashed line/.style={dashed, thin},
+    pile/.style={thick, ->, >=stealth'},
+    every node/.style={color=black}
+    ]
+    \coordinate(e) at (1.5,4);
+    \coordinate(p) at (0,1);
+    \coordinate(q) at (3,1);
+    \coordinate(f) at (1.5,0);
+    
+     {\small
+    \draw [align=center] (e) node[above] {Force $(F)$, $\text{N}$ };
+    \draw[align=center] (f) node[below] {Velocity $(Q)$, $\frac{\text{m}}{\text{s}}$ };
+    \draw[align=center] (q) node [right] {Position $(q)$, $\text{m}$};
+   \draw[align=center] (p) node [left] {Momentum $(p)$, $\text{kg}\frac{\text{m}}{\text{s}}$}; 
+    
+    \draw [->, >=stealth'](e)-- (p);
+    \draw [->, >=stealth'](p)-- (f);
+    \draw [->, >=stealth'](f)-- (q);
+    \draw [->, >=stealth'](q)-- (e);
+    \draw [->, >=stealth'](e)-- (f);
+    \draw [->, >=stealth'](f)-- (e);
+    
+    \draw ($(p)!0.5!(f)$) node[below left] {$m$};  
+    \draw ($(q)!0.5!(f)$) node[below right] {{\small$\int\_ dt$}};
+    \draw ($(q)!0.5!(e)$) node[above right] {$k$};
+    \draw ($(e)!0.5!(f)$) node[below left] {$b$};
+    \draw ($(p)!0.5!(e)$) node[left] {{\small$\int\_ dt$}};
+     }
+     
+     
+        \end{tikzpicture}
+
+ \end{minipage}
+ \hfill
+\begin{minipage}{.3\textwidth} %ELECTRICAL
+ \centering
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.7}]
+   
+    axis/.style={very thick, ->, >=stealth'},
+    important line/.style={thick},
+    dashed line/.style={dashed, thin},
+    pile/.style={thick, ->, >=stealth'},
+    every node/.style={color=black}
+    ]
+    \coordinate(e) at (1.5,4);
+    \coordinate(p) at (0,1);
+    \coordinate(q) at (3,1);
+    \coordinate(f) at (1.5,0);
+    
+     {\small
+    \draw [align=center] (e) node[above] {Voltage $(u)$, $\text{V}$ };
+    \draw[align=center] (f) node[below] {Current $(i)$, $\text{A}$ };
+    \draw[align=center] (q) node [right] {Charge $(q)$, $\text{C}$};
+   \draw[align=center] (p) node [left] {Flux $(\phi)$, $\text{Wb}$}; 
+    
+    \draw [->, >=stealth'](e)-- (p);
+    \draw [->, >=stealth'](p)-- (f);
+    \draw [->, >=stealth'](f)-- (q);
+    \draw [->, >=stealth'](q)-- (e);
+    \draw [->, >=stealth'](e)-- (f);
+    \draw [->, >=stealth'](f)-- (e);
+    
+    \draw ($(p)!0.5!(f)$) node[below left] {$L$};  
+    \draw ($(q)!0.5!(f)$) node[below right] {{\small$\int\_ dt$}};
+    \draw ($(q)!0.5!(e)$) node[above right] {$C$};
+    \draw ($(e)!0.5!(f)$) node[below left] {$R$};
+    \draw ($(p)!0.5!(e)$) node[left] {{\small$\int\_ dt$}};
+     
+    
+    }
+        \end{tikzpicture}
+
+ \end{minipage}
+
+        \caption{\small Tetrahedron of state of economic in the economic domain (left) and its mechanical (middle) and electrical (right) counterparts. Variables are shown on the vertices, with their name, symbol, and units. Operators relating two variables are shown on the edges of the tetrahedrons. Variables and operators are analogous to the ones at the same position on the other tetrahedrons.  }
+ \label{fig:tetrahedron}
+\end{figure}

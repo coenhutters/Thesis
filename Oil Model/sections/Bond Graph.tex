@@ -26,7 +26,7 @@ The 0-junction is an interconnection structure in which the flow variables sum u
 In the interconnection structure of the 1-junction the effort variables sum up to zero and the flow variable is common, $e_1+\dots+e_n=0$, $f_1=\dots =f_n$, e.g. an electrical loop.
 
 \begin{tcolorbox}
-make tables.
+make tables. port elements 
 \end{tcolorbox}
 
 \subsection{Bond graphs for economics}
@@ -38,14 +38,26 @@ The motivation behind this choice is that the power conservation at junctions,
 represents Walras' law for proper cash accounting.
 
 However, choosing price as an effort variable entails that the time-integral of price, which Brewer calls the \textit{economic impulse}, is the economic generalized momentum.
+Hence this results in a state-variable with no clear economic interpretation.
+Furthermore, the standard bond graph relations between elements do not result in a formulation of the time-rate of change of price, i.e. price dynamics.
+Only when assuming exponential relations between price and other energy or power variables the time derivatives of these relations result in some bilinear price dynamics \cite{Brewer1982}.
 
-
-
-
-This choice of variables, in particular the choice of price as an effort variable excludes the possibility of deriving price dynamics.
 
 We propose to view price not as an effort variable, but as a generalized momentum.
 This implies that the effort becomes a signal that provokes a rate of price movement, analogous to how a force provokes a rate of change in momentum.
 In general, we refer to the economic effort variable as a \textit{desirability}.
 
 Using this analogy, the power conservation at junctions represents the conservation of growth in an economic system. 
+Furthermore, under this analogy the conservation of energy implies the conservation of cash flow and the principle of least action translates to a principle of minimum period cost (in $\$$).
+The latter has a direct connection with consumer theory.
+A further treatise of this is left for future work.
+
+
+
+
+
+
+
+
+\include{Oil Model/Figures/tetrahedron}
+\include{Oil Model/sections/Variablestable}
