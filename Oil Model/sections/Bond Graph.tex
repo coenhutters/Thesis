@@ -1,0 +1,51 @@
+\section{Bond graph modeling of dynamical systems}
+Bond graphs describe systems as the interconnection of subsystems, or elements.
+Each element has a $port$ through which it can be connected to its environment.
+The ports of elements are interconnected by bonds that represent the bi-directional flow of two power variables, effort and flow.
+The product of the effort and flow determines the rate of energy exchange between elements per unit of time, i.e. the power.
+Power and energy are domain neutral phenomena.
+Effort and flow are the generalized description of the signals that make up power in specific engineering domains.
+For example, in mechanical systems power is the product of force (effort) and velocity (flow) and in electrical systems power is the product of voltage (effort) and current (flow).
+For this reason, force and velocity are said to be the \textit{analog} of voltage and current, respectively.\footnote{In alternative, equally valid analogy voltage is the analog of velocity.\cite{}.}
+
+The basic bond graph elements are divided into 1-port, 2-port, and multi-port elements.
+The 1-port elements are the inertia, the capacitor, the resistor, and the active effort source and flow source.
+Each 1-port element has a constitutive relation that relates the two power variables.
+In case of the inertia and the capacitor this relation includes a time integral that keeps track of a stored state variable. 
+The constitutive relation of a inertia is $f= \phi_I^{-1}(p)$, where $p=\int e dt$ and a capacitor is $e = \phi_C (q),$ where $q =\int f dt$,
+The dynamics of the state variables are defined by the entire bond graph model.
+This time integral also implies a preferred causality, i.e. a preferred effort or flow input.
+The resistor dissipates energy and does not have a preferred causality; its causality depends on how it is interconnected to the rest of the system.
+A resistor may return an effort for a flow input, $e=\phi_R(f)$, or return a flow for an effort input, $e=\phi_R^{-1}(e)$.
+The 2-port elements are the transformer and gyrator.
+A transformer links one effort $e_1$ to another effort $e_2$ and one flow $f_1$ to another flow $f_2$ in a power-preserving manner, i.e. $e_1f_1=e_2f_2$.
+The gyrator links one effort $e_1$ to a flow $f_2$ and vice versa, again in a power-preserving manner.
+The multi-port elements are the 0-junction and the 1-junction.
+The multi-port elements represent the interconnection structure between elements. 
+The 0-junction is an interconnection structure in which the flow variables sum up to zero and the effort variable is common,$f_1+\dots+f_n=0$, $e_1=\dots =e_n$ , e.g. an electrical node.
+In the interconnection structure of the 1-junction the effort variables sum up to zero and the flow variable is common, $e_1+\dots+e_n=0$, $f_1=\dots =f_n$, e.g. an electrical loop.
+
+\begin{tcolorbox}
+make tables.
+\end{tcolorbox}
+
+\subsection{Bond graphs for economics}
+Brewer extended the bond graph analogy in \cite{} by choosing the rate of orders as flow variable and the unit commodity price as effort variable.
+The motivation behind this choice is that the power conservation at junctions,
+\begin{equation*}
+    e_1f_1+e_2f_2+\dots e_nf_n=0,
+\end{equation*}
+represents Walras' law for proper cash accounting.
+
+However, choosing price as an effort variable entails that the time-integral of price, which Brewer calls the \textit{economic impulse}, is the economic generalized momentum.
+
+
+
+
+This choice of variables, in particular the choice of price as an effort variable excludes the possibility of deriving price dynamics.
+
+We propose to view price not as an effort variable, but as a generalized momentum.
+This implies that the effort becomes a signal that provokes a rate of price movement, analogous to how a force provokes a rate of change in momentum.
+In general, we refer to the economic effort variable as a \textit{desirability}.
+
+Using this analogy, the power conservation at junctions represents the conservation of growth in an economic system. 

@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+%In case you encounter the following error:
+%Error 1010 The PDF file may be corrupt (unable to open PDF file) OR
+%Error 1000 An error occurred while parsing a contents stream. Unable to analyze the PDF file.
+%This is a known problem with pdfLaTeX conversion filter. The file cannot be opened with acrobat reader
+%Please use one of the alternatives below to circumvent this error by uncommenting one or the other
+%\pdfobjcompresslevel=0
+%\pdfminorversion=4
+
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+\usepackage{graphicx} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{mathptmx} % assumes new font selection scheme installed
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{stackengine}
+\usepackage{booktabs}
+\usepackage{physics}
+\usepackage{comment}
+\usepackage{wrapfig}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{ticks=none}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usepackage{bondgraphs}
+\usetikzlibrary{shapes,positioning, fit, backgrounds}
+\usepackage{commath}
+\usetikzlibrary{intersections}
+\usetikzlibrary{arrows,shapes,   calc, patterns,decorations.pathmorphing,decorations.markings}
+\tikzset{
+block/.style = {draw, fill=white, rounded corners, minimum height=1em, minimum width=1em},
+tmp/.style  = {coordinate}, 
+sum/.style= {draw, fill=white, circle, node distance=1cm},
+input/.style = {coordinate},
+output/.style= {coordinate},
+container/.style = {draw, rounded corners,
+                     inner xsep=2mm, inner ysep=2mm},
+pinstyle/.style = {pin edge={to-,thin,black}
+}
+}
+
+
+\def\delfy{\mathrel{\ensurestackMath{\stackon[1pt]{=}{\scriptstyle\Delta}}}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition} [section]                            % Theorem head font
+
+\title{\LARGE \bf 
+A Bond Graph modeling perspective to price dynamics in the global oil-economic system}
+
+
+\author{
+		Coen Hutters, Nicolaas Orie, Max Mendel 
+% 
+\thanks{
+C.~Hutters and M.~Mendel are with the Delft Center for Systems and Control, Delft University of Technology, Mekelweg 2, 2628 CD, Delft, The Netherlands. 
+{\tt\small \{c.hutters-1, m.mendel\}@tudelft.nl}
+%
+}
+}
+
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+ 
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{sections/Introduction}
+\input{sections/Literature}
+\input{sections/Bond Graph}
+\input{sections/Methodology}
+\input{sections/Model}
+\input{sections/Simulation}
+\input{sections/Conclusions}
+
+\bibliography{reference}
+\bibliographystyle{ieeetr}
+
+\newpage
+
+\begin{comment}
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{Figures/production.eps}
+    \caption{\small Energy production per generator and market price over 24 hrs (96 quarters). Wind generators operate at maximum capacity until price is under ??. Coal plant operates when price is above ??. Gas plant only operates when price is above??. Total production vs total consumption is shown in Figure \ref{fig: supvsdem} }
+  %  \label{fig: prod}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{Figures/consumption.eps}
+    \caption{\small Energy consumption per consumer and market price over 24 hrs. Consumers follow a sinusoidal desired consumption. The inelastic consumer 5 does not deviate from the desired consumption. The other consumers reduce their consumption when prices are high according to their price elasticity. }
+    \label{fig: cons}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{Figures/auctioneer.eps}
+    \caption{\small Price adjustment and excess demand over 24 hours. TSO generates a price adjustment based on the excess demand. The market price is the integral of the price adjustments.}
+ %   \label{fig: cont}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.5\textwidth]{Figures/supvsdem.eps}
+    \caption{\small Total energy supply vs total energy demand}
+%    \label{fig: supvsdem}
+\end{figure}
+
+\end{comment}
+\end{document}

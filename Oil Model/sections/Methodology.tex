@@ -1,0 +1,163 @@
+\section{Oil-Market Dynamics}
+\label{sec: EconEng}
+
+\subsection{What drives crude oil prices}
+The oil-economic literature identifies multiple factors that affect the price of crude oil.
+The US Energy Information Administration (EIA) captures the four most important factors in a simple model, shown in Figure \ref{fig:EIAmodel}.
+The four factors consist of supply, demand, inventory balance, and the financial markets.
+An extensive analysis of the EIA model supported by a literature review is provided in \cite{LANG2020100914}.
+In this section, we discuss how the four factors can be modeled with dynamical systems theory resulting in a dynamical systems model for oil prices.
+
+
+
+
+\subsection{Oil Price as dynamical state}
+We consider the oil price as a dynamical state.
+The oil price changes over time due to the effect of supply, demand, inventories, and financial markets.
+We model this by the following dynamical law
+\begin{equation}
+\label{eq: pdot}
+    {p}(t) = \int F(t) dt,
+\end{equation}
+where $p(t)$ is  the oil price in $\$/\#$ and $F(t)$ is an ''economic force'' applied by on or more factors in $\$/\#\cdot$ yr.
+We introduce the specific economic force of each factor in the rest of this section.
+
+The notion of price as a dynamical state is analogous to the notion of inventory, or stock, as a dynamical state.
+Inventory dynamics follow the physical law
+\begin{equation}
+    \label{eq: qdot}
+ q(t) = \int Q (t) dt,
+\end{equation}
+where $Q(t)$ is the net flow of assets in $\#/$yr.
+
+
+\subsection{Competitive and OPEC Oil supply}
+Oil supply is identified as a driver of the long-term equilibrium price.
+Oil supply is typically divided in Organization of the Petroleum Exporting Countries (OPEC) and non-OPEC production.
+This division is made because the OPEC members produce with respect to a central coordination and are mostly in hands of national oil companies, whereas non-OPEC producers are mostly in hands of investor-owned companies that make independent decisions.
+
+To make the same distinction between OPEC and non-OPEC members, we will model non-OPEC members as inductive elements and OPEC members as controlled current sources.
+
+\subsubsection{non-OPEC members}
+Non-OPEC oil producers make independent decisions.
+In addition, they are assumed to make decisions so as to make return on investments at the actual market price.
+
+
+We model each non-OPEC producer as a cost-minimizing agent, i.e. ignoring investments.
+Each producer $i\in I$ controls a production path $\gamma_i$ for the upcoming period $T_p$.  
+The $i^{\text{th}}$ producer's problem is 
+\begin{equation}
+    \label{eq: prod}
+\begin{split}
+\min_{\gamma_i} &\int_{0}^{T_p} L_{i}({y}_i)  \dif \tau \\
+&\text{s.t.}\ {y}_i \in Y_i 
+\end{split}
+\end{equation}
+Here, $Y_i$ is the set of achievable production levels of producer $i$. 
+We assume that the running cost $L_{i}$ takes the following form
+\begin{equation}
+\label{eq: Li}
+\begin{split}
+ L_{i}=     \underbrace{\frac{1}{2}{{y}_i(t)}^TE_{i}^{-1}{{y}_i(t)}}_{\text{variable cost}}+\underbrace{{p}_{f,i}(t )^T{{y}_i}(t )}_{\text{fixed cost}}- \underbrace{ \lambda(t)^T{{y}_i}(t )}_{\text{revenue}},
+ \end{split}
+\end{equation}
+where $y_i \in \mathbb{R}^1$ is the production, $E_i$ is the price elasticity of supply of the $i^{th}$ producer, $p_{f,i}$ are the fixed costs, and $\lambda$ is the market price.   
+
+After applying the calculus of variations the optimization problem (\ref{eq: prod}) results in the affine supply function
+\begin{equation}
+y_i(t) = \begin{cases}
+E_i(\lambda(t)-p_{f,i}) & \text{if}\ \lambda\geq p_{f,i}\ \text{and}\ y_i(t) \in Y_i\\
+0 & \text{if} \lambda\leq p_{f,i}
+\end{cases}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.4\textwidth]{Figures/cost curve.PNG}
+    \caption{Marginal cost curve of crude oil as piecewise-affine function}
+    \label{fig:marginalcost}
+\end{figure}
+
+\subsubsection{OPEC}
+OPEC members do not produce according to a free market principle, i.e. basing production levels on the market price.
+Instead, the organization sets predetermined production targets for its member countries.
+The cost-minimization model used for non-OPEC members thus does not apply to OPEC members.
+
+In this paper, we consider the supply from OPEC members as an external disturbance.
+
+\begin{equation}
+    Q(t) = d(t)
+\end{equation}
+
+In the discussion section we propose objective functions that may predict the oil supply from OPEC members.
+
+
+\subsection{Oil demand}
+On the demand side, the EIA model makes a distinction between member states of the Organization of Economic Cooperation and Development (OECD) and non-OECD countries.
+Most developed countries, e.g. the US and countries in the European Union, are members of the OECD.
+The oil consumption in OECD countries is less dependent on economic growth than for developing countries.
+This is because the GDP of developed countries is more stable, tax policies slow down oil consumption, and developed countries have larger service industries relative to manufacturing industries.
+As a result, the oil consumption in OECD countries is mostly dependent on the oil price.
+
+We model each OECD consumer similar to how we model non-OPEC producers.
+This entails that each consumer $j\in J$ controls its consumption path .....
+
+
+....
+
+
+Many non-OECD members are developing countries, among which China, India, and Saudi Arabia are the biggest consumers.
+In non-OECD counries, oil consumption is stronger related to economic growth rather than to oil prices.
+This is a result of on the one hand changing conditions in developing economies, such as increases in population and purchasing power, and on the other hand the higher share of manufacturing industry and use of oil as energy source and feedstock.   
+Therefore, non-OECD consumption cannot be modeled like OECD consumption.
+Instead, we propose to model non-OECD consumption as an external disturbance that varies with the economic growth of these countries.
+
+Some non-OECD countries control domestic oil prices, preventing consumers to react to global oil price changes.
+In the discussion section we propose a model of these countries as disturbance-rejecting controller.
+
+
+
+
+
+\subsection{Inventories}
+The difference between supply and demand is stored in inventory.
+The inventory level is a state variable $q$.
+The inventory level changes over time by the kinematic relation
+\begin{equation}
+    \dot{q} = Q_S-Q_D,
+\end{equation}
+where $Q_S$ is the oil supply, and $Q_D$ is the oil demand.
+In case $Q_S>Q_D$, inventory levels rise, and in case $Q_D>Q_S$ inventory levels decrease.
+A positive-valued inventory level $q(t)$ indicates a long position of oil that is physically stored, whereas a negative $q(t)$ indicates a short position registered in order books.
+
+We model the convenience of having an inventory as an economic force that is proportional to the inventory level:
+\begin{equation}
+    F_C(t) = -k (q(t)-q^*),
+\end{equation}
+where $F_C$ is the convenience ''force'', $k$ is a constant indicating the elasticity of the storage, and $q^*$ is a desired inventory level.
+The convenience equation implies that there is a positive (negative) force that drives the price of oil up (down) when the inventory level is below (above) the desired level. 
+
+The oil inventories act as buffer between supply and demand.
+When supply exceeds demand, oil can be stored in inventory, and when demand exceeds supply oil may be extracted from the inventories.
+We recognize this principle as the analog of a capacitor in an electric circuit that may charge or discharge in case of alternating currents, or as the analog of a spring that can integrate the difference between two velocities.
+As the capacitor or spring, oil inventories do not only play a role in the kinematics of the system, i.e. describing the current, velocity, and flow of oil, respectively, but also in the dynamics describing the voltages, forces, and economic forces, respectively.
+
+
+
+
+
+\subsection{Financial markets}
+Multiple activities on the financial markets influence the price of oil.
+Oil future contracts, commodity exchange contracts, others.
+Some are complex. 
+
+In the model presented in this paper, we only consider the effect of oil traders.
+
+\begin{equation}
+    F_T = c (Q_D - Q_S),
+\end{equation}
+where $c$ is a discounting constant.
+
+In the discussion section, we propose how futures contracts may be modeled in the economic-engineering framework.
+
+We omit the 

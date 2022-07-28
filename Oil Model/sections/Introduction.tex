@@ -1,0 +1,68 @@
+\section{Introduction}
+\label{sec: intro}
+
+
+
+
+The global energy system is undergoing a mayor shift. Carbon-based energy carriers, such as crude oil and natural gas, are being partly replaced by electrification alternatives such as electricity storage and hydrogen. [Global Energy and Climate Outlook 2019: Electrification for the low-carbon transition]. 
+This shift to a hybrid and more complex energy system calls for new energy models that are capable of dealing with complexity, non-equilibrium conditions and uncertainty. [Emergence of New Economics Energy Transition Models: A Review].
+
+ 
+Current modelling techniques to model oil-economic systems can be subdivided in three categories; structural, computational, and reduced form (econometric models) [Hillard G. Huntington. Oil markets and price movements: A survey of models. SSRN Electronic Journal, May 2003.]. Structural models are first-principle, agent-based systems models. Structural models lack the ability to yield quantitatively reliable results. 
+Computational models are first-principle equilibrium models of economic systems.
+These models yield reliable quantitative results, but lack the ability to model non-equilibrium systems. 
+Reduced form (econometric) models are regression models on time-series data.
+These models can accurately model short-term variability, but are not able to make predictions outside the variable space on which these models are trained.
+This inability is a crucial shortcoming of regression models given the shifting energy system.
+
+In this paper, we introduce the use of dynamical systems theory to model the oil market.
+In particular, we use the bond graph modelling method to derive a first-principles model of the price and inventory dynamics in the oil market.
+
+
+
+Bond graphs are graphical tools used to model dynamical systems.
+The bond graph method was introduced by Henry Paynter who noted that the dynamics of engineering systems from different domains, e.g. electrical, mechanical, or hydraulic engineering, were described by differential equations of the same form.
+In a bond graph, elements are interconnected by power bonds that represent the time rate of energy flow between the elements as the product of \textit{flow} and \textit{effort} variables.
+Furthermore, each power bond indicates the causality at each element port, i.e. whether an element is driven by a {flow} variable, or its dual {effort} variable. 
+The assignment of causality throughout a system must follow structured rules, leaving no room for ambiguous causal relations.
+Bond graph theory has been extended to mechatronics, thermodynamics, hybrid and switching systems, and even social and economic systems.
+
+The extension to economic systems was first introduced by Brewer.
+Brewer's analogy has been further used in a port-Hamiltonian formulation of macroeconomic systems in ?? and in a macroeconomic bond graph including fractional-order elements in machado.
+In Brewer's analogy, money is the economic analog of energy.
+As a result of this choice, power bonds represent the cash flow between elements where cash flow is the product of price, the effort variable, and commodity flow, the flow variable.
+This however entails that, besides inventory stock, the state variable is the time-integral of price, which Brewer refers to as the \textit{economic impulse}.
+Using this analogy it is therefore not possible to derive a first-principles model of the price dynamics of an economic process.
+
+In this paper we introduce an alternative economic bond graph analog in which cash flow, or income, is the economic analog of energy.
+Economic bond graph elements are then linked by bonds that represent the exchange of growth.
+Here, growth is the product of price movement and commodity flow, representing the economic effort and flow variables, respectively.
+In this analogy, bond graph models can be used to model the dynamics of inventory stocks and of prices.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+In dynamical systems theory, the time evolution of the system is derived from its current state.
+For example, the time evolution of mechanical system can be derived from its current state variables through Newton's equations of motion and that of an electrical system through Maxwell's equations.
+For the time evolution of commodity markets, we will use an analogy between engineering and economic systems that results in the equations of motion of economic processes.
+This economic-engineering analogy has been developed by the <third> author of this paper and will be presented in detail in future work.
+In the present section, we introduce the concepts from the economic-engineering analogy that are relevant for the contribution made in this paper.
+We first introduce the description of a commodity market as a dynamical system and then introduce the analogy between mechanical elements and economic phenomena.
+\end{comment}
+

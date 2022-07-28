@@ -1,0 +1,30 @@
+\begin{figure}[]
+\centering
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+    \node [sum, name=sum]{} ;
+    \node[left of=sum, node distance =0.5cm] {X};
+    \node[block, right of=sum, node distance= 2cm] (C) {CH};
+     \node[tmp, right of=C, node distance=2cm] (y) {};
+     \node[block, above of=C, node distance= 3cm] (D) {$\mathbb{C}_1$};
+     \node[block, below right=.001cm and .001cm of D] (D1) {$\mathbb{C}_2$};
+     \node[below right=.001cm and .001cm of D1] (D2) {$\ddots$};
+     \node[block, below of=D2, node distance= .65cm] (D3) {$\mathbb{C}_J$} ;
+     
+     
+    \scoped[on background layer]
+     \node [container, fit= (D) (D3), fill = {cyan!10!white}] (){};
+     \node[block, below of=C, node distance= 2cm] (S) {Supply};
+     
+   \draw[->] (sum) -- (C)  node[midway] {$e$};
+   \draw[-] (C) -- (y) node[midway] {$u$};
+   \draw[->] (y) |- (D);
+   \draw[->] (y) |- (S);
+    \draw[->] (D)  -| (sum)node[pos=.25, above]{$x$};
+     \draw[->] (S)  -| node[pos=0.99] {$-$}  (sum)node[pos=.25, above]{$y$};
+ 
+    \end{tikzpicture}
+    \caption{Market structure. Demand and Supply signal their orders $x$ and $y$, resp.
+    Clearing House signals price update $u$.}
+    \label{fig:structure}
+\end{figure}
+
