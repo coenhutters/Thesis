@@ -37,13 +37,13 @@
 \node[label=left:$Balance$,left=1 of 1junc] (C) {C};
 \node[label=right:$Fin.\ markets$,right=1 of 1junc] (R) {R};
 \draw
-(0junc) edge[e_out] (nOECD);
-(0junc) edge[e_out] (OECD);
-(OPEC) edge[e_in] (0junc);
-(nOPEC) edge[e_in] (0junc);
-(1junc) edge[e_out] (0junc);
-(C) edge[e_out]  (1junc);
-(R) edge[e_out]  (1junc);
+(0junc) edge[e_out] (nOECD)
+(0junc) edge[e_out] (OECD)
+(OPEC) edge[e_in] (0junc)
+(nOPEC) edge[e_in] (0junc)
+(1junc) edge[e_out] (0junc)
+(C) edge[e_out]  (1junc)
+(R) edge[e_out]  (1junc)
 \end{tikzpicture}
 \caption{Bondgraph model of Oil market based on the EIA model.}
     \label{fig:bondgraph}
